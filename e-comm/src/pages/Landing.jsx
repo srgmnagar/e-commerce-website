@@ -6,14 +6,15 @@ import jwellery from '../Images/jwellery.png';
 import elec from '../Images/elec.png';
 import women from '../Images/women.png';
 import men from '../Images/men.png';
-
+import Productcards from '../Components/Productcards';
 
 function Landing() {
 
   return (
-    <div className="bg-gradient-to-b from-[#ffcfb4] to-amber-50 min-h-screen relative">
+    <div className="bg-gradient-to-b from-[#ffcfb4] to-amber-50 min-h-screen relative pb-5">
       <Navbar />
-      <section className="flex gap-16 text-orange-950">
+      <div className='relative'>
+      <section className="flex gap-16 text-orange-950 ">
 
         <img
           className="main-img relative "
@@ -48,7 +49,7 @@ function Landing() {
       <section className="bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] w-[60%] m-auto absolute right-32 bottom-24 flex flex-col justify-center">
 
 
-         {/* search bar */}
+        {/* search bar */}
         {/* <div class="flex px-4 py-4 rounded-[40px] border-2 border-[#ffffff76] overflow-hidden mx-auto w-full bg-transparent">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px"
             class="fill-white mr-3 rotate-90">
@@ -59,44 +60,47 @@ function Landing() {
           <input type="email" placeholder="Search Something" className="placeholder-gray-100 w-full outline-none bg-inherit text-white text-md" />
         </div> */}
 
-      <div className='text-white font-extrabold text-3xl text-center'>Explore Popular Categories</div>
-      <div className='flex gap-10 justify-center'>
-        <div className='flex flex-col items-center justify-between relative gap-6'>
-          <div className='flex flex-col items-center'>
-            <img className='w-36' src={men} alt="" />
-            <button  className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+        <div className='text-white font-extrabold text-3xl text-center'>Explore Popular Categories</div>
+        <div className='flex gap-10 justify-center'>
+          <div className='flex flex-col items-center justify-between relative gap-6'>
+            <div className='flex flex-col items-center'>
+              <img className='w-36' src={men} alt="" />
+              <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+            </div>
+            <div className='text-red-800 italic font-extrabold font-serif text-lg'>Electronics</div>
           </div>
-          <div className='text-red-800 italic font-extrabold font-serif text-lg'>Electronics</div>
-        </div>
 
-        <div className='flex flex-col items-center justify-between relative gap-6'>
-          <div className='flex flex-col items-center'>
-            <img className='w-36' src={jwellery} alt="" />
-            <button  className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+          <div className='flex flex-col items-center justify-between relative gap-6'>
+            <div className='flex flex-col items-center'>
+              <img className='w-36' src={jwellery} alt="" />
+              <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+            </div>
+            <div className='text-red-800 italic font-[900] font-serif text-lg'>Jewellery</div>
           </div>
-          <div className='text-red-800 italic font-[900] font-serif text-lg'>Jewellery</div>
-        </div>
 
-        <div className='flex flex-col items-center justify-between relative gap-6'>
-          <div className='flex flex-col items-center'>
-            <img className='w-36' src={women} alt="" />
-            <button  className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+          <div className='flex flex-col items-center justify-between relative gap-6'>
+            <div className='flex flex-col items-center'>
+              <img className='w-36' src={women} alt="" />
+              <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+            </div>
+            <div className='text-red-800 italic font-[900] font-serif text-lg'>Women's Clothing</div>
           </div>
-          <div className='text-red-800 italic font-[900] font-serif text-lg'>Women's Clothing</div>
-        </div>
 
-        <div className='flex flex-col items-center justify-between relative gap-6'>
-          <div className='flex flex-col items-center'>
-            <img className='w-36' src={men} alt="" />
-            <button  className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+          <div className='flex flex-col items-center justify-between relative gap-6'>
+            <div className='flex flex-col items-center'>
+              <img className='w-36' src={men} alt="" />
+              <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
+            </div>
+            <div className='text-red-800 italic font-[900] font-serif text-lg'>Men's Clothing</div>
           </div>
-          <div className='text-red-800 italic font-[900] font-serif text-lg'>Men's Clothing</div>
+
         </div>
-        
-      </div>
 
       </section>
-
+      </div>
+      <section>
+      <Productcards />
+      </section>
     </div>
 
   )
