@@ -4,3 +4,12 @@ h2{
 h1{
     font-size: xx-large;
 }
+
+.main-img{
+    width:33.65rem;
+    top:-4rem;
+    left:3rem;
+    bottom: 0;
+}
+.btn-shadow{
+    box-shadow: #fef08a 0px 0px 10px 6px;}

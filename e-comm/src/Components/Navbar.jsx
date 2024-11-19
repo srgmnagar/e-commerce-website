@@ -7,9 +7,9 @@ import Cart from '../Images/cart.png';
 
 function Navbar() {
   return (
-    
+    <div className='bg-gradient-to-b from-[#ffa15dda] to-[#ffffff00]'>
       <div className="py-2 px-10 font-sans text-orange-950 font-semibold flex justify-between items-center">
-        <div className="w-32 md:w-36">
+        <div className="w-32 md:w-36 hover:scale-105 transition-all duration-100 ease-in">
           <img src={Logo} alt="Logo" />
         </div>
         <div className="flex gap-20 items-center text-[17px]">
@@ -37,16 +37,16 @@ function Navbar() {
     </div>
 
         <div className="flex gap-9">
-            <div className='p-3  hover:bg-orange-100 rounded-full hover:scale-105 transition-all duration-200 ease-in'>
+            <button className='p-3  hover:bg-orange-100 rounded-full hover:scale-105 transition-all duration-100 ease-in-out'>
           <img className="w-6" src={User} alt="User Icon" />
-            </div>
-            <div className='p-3 hover:bg-orange-100 rounded-full hover:scale-105 transition-all duration-200 ease-in'>
+            </button>
+            <button className='p-3 hover:bg-orange-100 rounded-full hover:scale-105 transition-all duration-100 ease-in'>
             <img className="w-6" src={Cart} alt="Cart Icon" />
-            </div>
+            </button>
           
         </div>
       </div>
-    
+      </div>
   );
 }
 
