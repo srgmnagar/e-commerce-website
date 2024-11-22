@@ -14,7 +14,7 @@ function Landing() {
     <div className="bg-gradient-to-b from-[#ffcfb4] to-amber-50 min-h-screen relative pb-5">
       <Navbar />
       <div className='relative'>
-      <section className="flex flex-wrap justify-center md:flex-nowrap lg:gap-16 md:gap-10 gap-2 text-orange-950 ">
+      <section className="flex flex-wrap justify-start md:flex-nowrap lg:gap-10 md:gap-10 gap-2 text-orange-950 ">
 
         <img
           className="main-img relative"
