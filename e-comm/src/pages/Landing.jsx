@@ -14,18 +14,18 @@ function Landing() {
     <div className="bg-gradient-to-b from-[#ffcfb4] to-amber-50 min-h-screen relative pb-5">
       <Navbar />
       <div className='relative'>
-      <section className="flex gap-16 text-orange-950 ">
+      <section className="flex flex-wrap justify-center md:flex-nowrap lg:gap-16 md:gap-10 gap-2 text-orange-950 ">
 
         <img
-          className="main-img relative "
+          className="main-img relative"
           src={Main}
           alt=""
         />
 
-        <div className=" flex flex-col gap-3 font-sans mt-6   items-start">
-          <h1 className="text-7xl font-extrabold">Let's Shop,</h1>
-          <h1 className="text-7xl font-extrabold">All-In-One</h1>
-          <h3 className="text-xl font-medium">Lorem ipsum dolor sit amet consectetur, adipisicing</h3>
+        <div className="md:p-0 p-2 flex flex-col  gap-3 font-sans mt-6  px-5 items-start">
+          <h1 className=" lg:text-7xl md:text-5xl font-extrabold">Let's Shop,</h1>
+          <h1 className="lg:text-7xl md:text-5xl font-extrabold">All-In-One</h1>
+          <h3 className="md:text-xl font-medium text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing</h3>
         </div>
 
         <div className='flex flex-col gap-3 mt-6 items-center '>
@@ -34,7 +34,7 @@ function Landing() {
             <div >Why Our Products</div>
             <div>Make You Happy?</div>
           </div>
-          <div className='flex gap-3'>
+          <div className='flex gap-3' >
             <div className='relative '>
               <img className='w-20 hover:scale-105 transition-all duration-100 linear' src={Lp_1} alt="" />
               <div className=' absolute px-1 py-0.5 bg-[#ffffffc8] rounded-3xl text-[7px] bottom-3 left-2 '>Quick Response</div>
@@ -46,7 +46,7 @@ function Landing() {
           </div>
         </div>
       </section>
-      <section className="bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] w-[60%] m-auto absolute right-32 bottom-24 flex flex-col justify-center">
+      <section className="md:m-0 my-5 bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] md:w-[60%] w-[80%] mx-auto md:absolute lg:right-32 lg:bottom-24 md:right-7 md:bottom-2 bottom-0 flex flex-col justify-center">
 
 
         {/* search bar */}
@@ -61,7 +61,7 @@ function Landing() {
         </div> */}
 
         <div className='text-white font-extrabold text-3xl text-center'>Explore Popular Categories</div>
-        <div className='flex gap-10 justify-center'>
+        <div className='flex flex-wrap md:flex-nowrap gap-10 justify-center'>
           <div className='flex flex-col items-center justify-between relative gap-6'>
             <div className='flex flex-col items-center'>
               <img className='w-36' src={men} alt="" />

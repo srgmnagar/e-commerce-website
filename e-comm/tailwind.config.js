@@ -8,7 +8,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"Montserrat"', 'ui-sans-serif', 'system-ui'],
-        baloo: ['"Baloo 2"', 'cursive']
+        baloo: ['"Baloo 2"', 'cursive'],
+        textDecoration: ['active'], // Enable `active:` for text-decoration
+        fontWeight: ['active'],
       }
     },
   },
