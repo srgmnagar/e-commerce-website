@@ -64,7 +64,7 @@ function Landing() {
         <div className='flex flex-wrap md:flex-nowrap gap-10 justify-center'>
           <div className='flex flex-col items-center justify-between relative gap-6'>
             <div className='flex flex-col items-center'>
-              <img className='w-36' src={men} alt="" />
+              <img className='w-36 hover:scale-110 transition-all delay-50 duration-150 ease-in' src={men} alt="" />
               <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
             </div>
             <div className='text-red-800 italic font-extrabold font-serif text-lg'>Electronics</div>
@@ -72,7 +72,7 @@ function Landing() {
 
           <div className='flex flex-col items-center justify-between relative gap-6'>
             <div className='flex flex-col items-center'>
-              <img className='w-36' src={jwellery} alt="" />
+              <img className='w-36 hover:scale-110 transition-all delay-50 duration-150 ease-in' src={jwellery} alt="" />
               <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
             </div>
             <div className='text-red-800 italic font-[900] font-serif text-lg'>Jewellery</div>
@@ -80,7 +80,7 @@ function Landing() {
 
           <div className='flex flex-col items-center justify-between relative gap-6'>
             <div className='flex flex-col items-center'>
-              <img className='w-36' src={women} alt="" />
+              <img className='w-36 hover:scale-110 transition-all delay-50 duration-150 ease-in' src={women} alt="" />
               <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
             </div>
             <div className='text-red-800 italic font-[900] font-serif text-lg'>Women's Clothing</div>
@@ -88,7 +88,7 @@ function Landing() {
 
           <div className='flex flex-col items-center justify-between relative gap-6'>
             <div className='flex flex-col items-center'>
-              <img className='w-36' src={men} alt="" />
+              <img className='w-36 hover:scale-110 transition-all delay-50 duration-150 ease-in' src={men} alt="" />
               <button className='btn-shadow px-2 py-1.5 font-bold text-[10px] bg-yellow-200 rounded-full absolute bottom-10 hover:scale-105 transition-all duration-100 linear shadow-sm'>View All</button>
             </div>
             <div className='text-red-800 italic font-[900] font-serif text-lg'>Men's Clothing</div>

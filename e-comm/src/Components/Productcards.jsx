@@ -24,8 +24,8 @@ function Productcards() {
             <main className="md:max-w-[80vw] pt-4 max-w-[90vw] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8 m-auto">
                 {
                 product.map((product) => (
-                    <div className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-rose-800 text-amber-100 hover:scale-105 hover:bg-rose-900 transition-all delay-100 duration-150 ease-in">
-                        <img className="w-52" src={product.thumbnail} alt={product.title} />
+                    <div className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-rose-800 text-amber-100 ">
+                        <img className="w-52 hover:scale-110 transition-all delay-50 duration-150 ease-in" src={product.thumbnail} alt={product.title} />
                         <h2 className="text-red-100 text-xl font-bold text-center">{product.title} </h2>
                         <div className="flex gap-2 justify-center items-center">
                             <p className="text-md font-bold">${product.price}</p>
