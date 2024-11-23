@@ -77,13 +77,13 @@ function Navbar() {
             Home
           </NavLink>
           <NavLink
-            to="/product"
+            to="/collections"
             className={({ isActive }) =>
               `hover:scale-105 hover:font-bold transition-all duration-100 ease-in ${isActive ? "underline font-extrabold " : ""
               }`
             }
           >
-            Product
+            Collections
           </NavLink>
           <NavLink
             to="/about"
