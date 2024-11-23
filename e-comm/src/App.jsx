@@ -14,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Landing/>}/>
-      <Route path='/collecions' element={<Collection/>}/>
+      <Route path='/collections' element={<Collection/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/product/:productId' element={<Product/>}/>

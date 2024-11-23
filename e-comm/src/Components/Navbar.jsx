@@ -46,13 +46,13 @@ function Navbar() {
         </div>
 
         <div className="flex gap-9">
-          <button className="p-3 rounded-full hover:scale-105 transition-all duration-100 ease-in-out">
+          <button className="p-3 rounded-full hover:scale-110 transition-all duration-100 ease-in-out">
             <img className="w-6" src={User} alt="User Icon" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
 
             </div>
           </button>
-          <NavLink to="/cart" className="p-3 rounded-full relative hover:scale-105 transition-all duration-100 ease-in">
+          <NavLink to="/cart" className="p-3 rounded-full relative hover:scale-110 transition-all duration-100 ease-in">
             <img className="w-6" src={Cart} alt="Cart Icon" />
             <p className="absolute right-[0px] bottom-[0px] w-8 text-center bg-black text-white rounded-full text-xs" >10</p>
           </NavLink>

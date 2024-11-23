@@ -6,7 +6,7 @@ function Productcards() {
         const [product, setProducts] = useState([]);
 
         useEffect(() => {
-            axios.get('https://dummyjson.com/products')
+            axios.get('https://dummyjson.com/products?limit=150')
                 .then((response) => {
                     console.log(response.data.products);
                     
