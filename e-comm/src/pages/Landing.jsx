@@ -14,7 +14,7 @@ function Landing() {
     <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5">
       <Navbar />
       <div className='relative'>
-      <section className="flex flex-wrap justify-start md:flex-nowrap lg:gap-10 md:gap-10 gap-2 text-orange-950 ">
+      <section className="flex flex-wrap sm:justify-start justify-center md:flex-nowrap lg:gap-10 md:gap-10 gap-2 text-orange-950 ">
 
         <img
           className="main-img relative"
@@ -22,7 +22,7 @@ function Landing() {
           alt=""
         />
 
-        <div className="md:p-0 p-2 flex flex-col  gap-3 font-sans mt-6  px-5 items-start">
+        <div className="md:p-0 p-2 flex flex-col  gap-3 font-sans mt-6  px-5 sm:items-start items-center">
           <h1 className=" lg:text-7xl md:text-5xl font-extrabold">Let's Shop,</h1>
           <h1 className="lg:text-7xl md:text-5xl font-extrabold">All-In-One</h1>
           <h3 className="md:text-xl font-medium text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing</h3>
@@ -37,7 +37,7 @@ function Landing() {
           <div className='flex gap-3' >
             <div className='relative '>
               <img className='w-20 hover:scale-105 transition-all duration-100 linear' src={Lp_1} alt="" />
-              <div className=' absolute px-1 py-0.5 bg-[#ffffffc8] rounded-3xl text-[7px] bottom-3 left-2 '>Quick Response</div>
+              <div className='sm:block hidden absolute px-1 py-0.5 bg-[#ffffffc8] rounded-3xl text-[7px] bottom-3 left-2 '>Quick Response</div>
             </div>
             <div className='flex flex-col gap-3'>
               <div className='px-5 py-5 text-xs bg-[#cf180030] rounded-xl hover:scale-105 transition-all duration-100 linear'>Best Value</div>
