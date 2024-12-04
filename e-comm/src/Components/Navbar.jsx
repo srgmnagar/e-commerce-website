@@ -10,7 +10,7 @@ import dropdown from '../Images/dropdown.png';
 function Navbar() {
   const [visible, setVisible] = useState(false);
   return (
-    <div className="bg-gradient-to-b from-[#ffa15dda] to-[#ffffff00]">
+    <div className="bg-gradient-to-b from-[#ff964cda] to-[#ffffff00]">
       <div className="py-2 px-10 font-sans text-orange-950 font-semibold flex justify-between items-center">
         <div className="w-32 md:w-36 hover:scale-105 transition-all duration-100 ease-in">
           <img src={Logo} alt="Logo" />

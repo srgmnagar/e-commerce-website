@@ -11,7 +11,7 @@ import Productcards from '../Components/Productcards';
 function Landing() {
 
   return (
-    <div className="bg-gradient-to-b from-[#ffcfb4] to-amber-50 min-h-screen relative pb-5">
+    <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5">
       <Navbar />
       <div className='relative'>
       <section className="flex flex-wrap justify-start md:flex-nowrap lg:gap-10 md:gap-10 gap-2 text-orange-950 ">
