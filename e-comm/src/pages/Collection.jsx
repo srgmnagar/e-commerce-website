@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import axios from "axios";
 import Cart from '../Images/cart.png';
 import Productcards from '../Components/Productcards';
+import SearchBox from '../Components/SearchBox';
 
 function Collection() {
   const [showfilter, setShowfilter] = useState(false)
@@ -86,7 +87,7 @@ useEffect(() => {
 return (
   <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5">
     <Navbar />
-
+  
     <div className='flex flex-col sm:flex-row gap-2 sm:gap-10 sm:px-20 px-10 py-7'>
       {/* {filterss} */}
       <div className='flex flex-col gap-3 min-w-72 px-5 py-3 cursor-pointer text-center font-medium bg-[#70001cc5] rounded-3xl text-amber-50'>
@@ -142,6 +143,7 @@ return (
         </div>
       </div>
       <div className='flex flex-col gap-5 '>
+      <SearchBox/>
         <div className='flex justify-between px-3 py-3'>
           <p className='text-2xl text-orange-950 font-medium'>ALL COLLECTIONS</p>
 
