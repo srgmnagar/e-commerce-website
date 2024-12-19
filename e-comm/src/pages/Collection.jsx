@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useContext} from 'react'
 import Navbar from '../Components/Navbar'
 import axios from "axios";
 import Cart from '../Images/cart.png';
 import Productcards from '../Components/Productcards';
 import SearchBox from '../Components/SearchBox';
+import { ShopContext } from '../context/ShopContext';
 
 function Collection() {
   const [showfilter, setShowfilter] = useState(false)
@@ -11,6 +12,7 @@ function Collection() {
   const [filterProduct, setFilterProduct] = useState([])
   const [product, setProducts] = useState([]);
   const [sortType, setSortType] = useState('relevant');
+  const { search, showSearch } = useContext(ShopContext)
 
   useEffect(() => {
     axios.get('https://dummyjson.com/products?limit=50')
@@ -37,7 +39,9 @@ function Collection() {
 
   const applyFilter = () => {
     let filtered = [...product];
-
+    if(search&&showSearch){
+      filtered=filtered.filter(item=>item.title.toLowerCase().includes(search.toLowerCase()))
+    }
     // Apply Category Filter
     if (category.length > 0) {
       filtered = filtered.filter((item) => category.includes(item.category));
@@ -60,7 +64,7 @@ function Collection() {
 
 useEffect(() => {
   applyFilter();
-}, [category, sortType]);
+}, [category, sortType,search,showSearch]);
 
 const sortproduct = () => {
   let fpcopy = [...filterProduct]; // Create a shallow copy of the array

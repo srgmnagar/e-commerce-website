@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Images/logo.png';
 import User from '../Images/user.png';
 import Cart from '../Images/cart.png';
 import menu from '../Images/menu.png';
 import dropdown from '../Images/dropdown.png';
-
+import Search from '../Images/search.png';
+import {ShopContext} from '../context/ShopContext'
 
 function Navbar() {
+  const {setShowSearch}=useContext(ShopContext);
   const [visible, setVisible] = useState(false);
   return (
     <div className="bg-gradient-to-b from-[#ff964cda] to-[#ffffff00]">
@@ -45,9 +47,15 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <div className="flex gap-9">
+        <div className="flex sm:gap-5 gap-0">
           <button className="p-3 rounded-full hover:scale-110 transition-all duration-100 ease-in-out">
             <img className="w-6" src={User} alt="User Icon" />
+            <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
+
+            </div>
+          </button>
+          <button onClick={()=>setShowSearch(true)} className="p-3 rounded-full hover:scale-110 transition-all duration-100 ease-in-out">
+            <img className="w-8" src={Search} alt="User Icon" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
 
             </div>
@@ -56,7 +64,7 @@ function Navbar() {
             <img className="w-6" src={Cart} alt="Cart Icon" />
             <p className="absolute right-[0px] bottom-[0px] w-8 text-center bg-black text-white rounded-full text-xs" >10</p>
           </NavLink>
-          <img onClick={() => setVisible(true)} src={menu} className="h-9 mt-3 cursor-pointer sm:hidden" alt="" />
+          <img onClick={() => setVisible(true)} src={menu} className="h-8 pl-1 mt-3 cursor-pointer sm:hidden" alt="" />
         </div>
         {/* sidebar menu for small screen */}
         <div className={`absolute z-10 top-0 bottom-0 right-0 overflow-hidden backdrop-blur-md transition-all ${visible ? 'w-full' : 'w-0'}`}>
