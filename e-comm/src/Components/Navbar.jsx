@@ -9,7 +9,7 @@ import Search from '../Images/search.png';
 import {ShopContext} from '../context/ShopContext'
 
 function Navbar() {
-  const {setShowSearch}=useContext(ShopContext);
+  const {showsearch, setShowSearch}=useContext(ShopContext);
   const [visible, setVisible] = useState(false);
   return (
     <div className="bg-gradient-to-b from-[#ff964cda] to-[#ffffff00]">

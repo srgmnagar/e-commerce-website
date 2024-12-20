@@ -5,6 +5,7 @@ import Cart from '../Images/cart.png';
 import Productcards from '../Components/Productcards';
 import SearchBox from '../Components/SearchBox';
 import { ShopContext } from '../context/ShopContext';
+import { NavLink } from 'react-router-dom';
 
 function Collection() {
   const [showfilter, setShowfilter] = useState(false)
@@ -163,7 +164,7 @@ return (
 
           <main className="md:max-w-[80vw] max-w-[90vw] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8 m-auto">
             {filterProduct.map(product => (
-              <div key={product.id} className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden">
+              <NavLink to={`/product/${product.id}`} key={product.id} className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden">
                 <img className="w-52 hover:scale-[1.17] transition-all delay-50 duration-200 linear" src={product.thumbnail} alt={product.title} />
                 <h2 className="text-red-100 text-xl font-bold text-center">{product.title}</h2>
                 <div className="flex gap-2 justify-center items-center">
@@ -174,7 +175,7 @@ return (
                   <div className="text-black text-xs md:text-sm">Add to Cart</div>
                   <img className="md:w-5 w-3" src={Cart} alt="Cart Icon" />
                 </button>
-              </div>
+              </NavLink>
             ))}
           </main>
 
