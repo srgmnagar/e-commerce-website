@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Cart from '../Images/cart.png';
+import CartButton from "./CartButton";
 
 function Productcards() {
         const [product, setProducts] = useState([]);
@@ -31,10 +31,7 @@ function Productcards() {
                             <p className="text-md font-bold">${product.price}</p>
                             <p className="text-xs text-gray-300">({product.discountPercentage}% off)</p>
                         </div>
-                            <button className='px-3 py-2 flex gap-2 hover:bg-orange-100 rounded-full bg-orange-200 hover:scale-105 transition-all duration-100 ease-in'>
-                                <div className="text-black text-xs md:text-sm">Add to Cart</div>
-                                <img className="md:w-5 w-3" src={Cart} alt="Cart Icon" />
-                            </button>
+                            <CartButton/>
                     </div>
                 ))}
             </main>
