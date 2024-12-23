@@ -1,13 +1,13 @@
 // export default AuthContext;
 import { createContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+    const navigate = useNavigate();
     // const [auth, setAuth] = useState({ accessToken: null, refreshToken: null });
-    // const navigate = useNavigate();
 
     // useEffect(() => {
     //     const storedAccessToken = localStorage.getItem('accessToken');
@@ -87,8 +87,8 @@ export const AuthProvider = ({ children }) => {
     // );
 
 
-    const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken') || null);
-const [refreshToken, setRefreshToken] = useState(localStorage.getItem('refreshToken') || null);
+    const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken') );
+const [refreshToken, setRefreshToken] = useState(localStorage.getItem('refreshToken'));
 
 const login = (token) => {
     setAccessToken(token);
@@ -100,6 +100,7 @@ const logout = () => {
     localStorage.removeItem('accessToken');
     setRefreshToken(null);
     localStorage.removeItem('refreshToken');
+    navigate('/')
 };
 
 return (
