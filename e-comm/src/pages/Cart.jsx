@@ -1,6 +1,6 @@
 
 import React, { useContext, useState, useEffect } from 'react';
-import AuthContext from '../Components/AuthProvider.jsx';
+import AuthContext from '../Components/Authprovider.jsx';
 import Navbar from '../Components/Navbar';
 import axios from 'axios';
 

@@ -8,7 +8,7 @@ import dropdown from '../Images/dropdown.png';
 import Search from '../Images/search.png';
 import { ShopContext } from '../context/ShopContext'
 
-import AuthContext from '../Components/Authprovider';
+import AuthContext from './Authprovider';
 
 function Navbar() {
   const { showsearch, setShowSearch } = useContext(ShopContext);
