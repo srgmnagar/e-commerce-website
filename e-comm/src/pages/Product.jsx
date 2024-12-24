@@ -7,6 +7,7 @@ import Navbar from '../Components/Navbar';
 import Star from '../Images/star.png'
 import CartButton from '../Components/CartButton';
 
+
 const Product = () => {
   const { productId } = useParams();
   const [data, setData] = useState([]);
