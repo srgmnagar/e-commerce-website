@@ -1,114 +1,113 @@
-// export default AuthContext;
 import { createContext, useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const navigate = useNavigate();
-    // const [auth, setAuth] = useState({ accessToken: null, refreshToken: null });
-
-    // useEffect(() => {
-    //     const storedAccessToken = localStorage.getItem('accessToken');
-    //     const storedRefreshToken = localStorage.getItem('refreshToken');
-    //     if (storedAccessToken && storedRefreshToken) {
-    //         setAuth({
-    //             accessToken: storedAccessToken,
-    //             refreshToken: storedRefreshToken,
-    //         });
-    //     }
-    // }, []);
-    
-
-    // const refreshAccessTokens = async () => {
-    //     const refreshToken = localStorage.getItem('refreshToken');
-    //     if (refreshToken) {
-    //         try {
-    //             console.log(refreshToken);
-                
-    //             const response = await axios.post("https://auth-backend-138t.onrender.com/api/v1/users/refresh-token", {
-    //                 refreshToken: refreshToken
-    //             });
-    //             const newAccessToken = response.data.data.accessToken; 
-    //             localStorage.setItem('accessToken', newAccessToken); 
-    
-    //             setAuth((prevState) => ({
-    //                 ...prevState,
-    //                 accessToken: newAccessToken
-    //             }));
-    
-    //             console.log(newAccessToken);
-                
-    //         } catch (error) {
-    //             console.error('Failed to refresh tokens:', error.response ? error.response.data : error.message);
-                
-    //         }
-    //     } else {
-    //         console.error('No refresh token available');
-    //     }
-    // };
-    
-
-    // const getAccessToken = async () => {
-    //     if (!auth.accessToken) {
-    //         return await refreshAccessTokens();
-    //     }
-    //     return auth.accessToken;
-    // };
-
-    // const logout = () => {
-    //     const accessToken = localStorage.getItem('accessToken');
-    //     if (!accessToken) {
-    //         console.error('No access token available for logout');
-    //         return;
-    //     }
-
-    //     axios.post('https://auth-backend-138t.onrender.com/api/v1/users/logout', {}, {
-    //         headers: {
-    //             Authorization: `Bearer ${accessToken}`
-    //         }
-    //     })
-    //     .then(() => {
-    //         localStorage.removeItem('accessToken');
-    //         localStorage.removeItem('refreshToken');
-    //         setAuth({ accessToken: null, refreshToken: null }); 
-    //         navigate('/login');
-    //     })
-    //     .catch((error) => {
-    //         console.error('Logout failed:', error.response?.data || error.message);
-    //     });
-    // };
-
-    // return (
-    //     <AuthContext.Provider value={{ auth, setAuth, refreshAccessTokens, getAccessToken, logout }}>
-    //         {children}
-    //     </AuthContext.Provider>
-    // );
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [cart, setCart] = useState(null);
+  const userId = localStorage.getItem('userId');
 
 
-    const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken') );
-const [refreshToken, setRefreshToken] = useState(localStorage.getItem('refreshToken'));
+//   useEffect(() => {
+//     const fetchUserCart = async () => {
+//       const userId = localStorage.getItem('userId');
+//       if (!userId) {
+//         console.error('User ID not found. Please log in.');
+//         return;
+//       }
 
-const login = (token) => {
+//       try {
+//         const response = await axios.get(`https://dummyjson.com/carts/${userId}`);
+//         setCart(response.data);
+//       } catch (error) {
+//         console.error('Error fetching cart:', error);
+//       }
+//     };
+//     fetchUserCart();
+//   }, []);
+
+//   const addToCart = async (productId, quantity = 1) => {
+//     if (!user) {
+//       throw new Error('User not logged in');
+//     }
+//     try {
+//       const response = await axios.put(`https://dummyjson.com/carts/${userId}`, {
+//         merge: true,
+//         products: [{ id: productId, quantity }],
+//       });
+//       setCart(response.data.products);  // Update cart directly
+//     } catch (error) {
+//       console.error('Error adding to cart:', error);
+//     }
+//   };
+
+//   const updateCart = async (updatedCart) => {
+//     if (!user) {
+//       throw new Error('User not logged in');
+//     }
+//     try {
+//       const response = await axios.put(`https://dummyjson.com/carts/${userId}`, {
+//         merge: true,
+//         products: updatedCart,
+//       });
+//       setCart(response.data.products);  // Update cart with new data
+//     } catch (error) {
+//       console.error('Error updating cart:', error);
+//     }
+//   };
+
+//   const removeFromCart = async (productId) => {
+//     if (!user) {
+//       throw new Error('User not logged in');
+//     }
+//     try {
+//       const updatedCart = cart.filter((product) => product.id !== productId);
+//       const response = await axios.put(`https://dummyjson.com/carts/${userId}`, {
+//         merge: false,
+//         products: updatedCart,
+//       });
+//       setCart(response.data.products);  // Update cart with removed product
+//     } catch (error) {
+//       console.error('Error removing from cart:', error);
+//     }
+//   };
+
+  const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken'));
+  const [refreshToken, setRefreshToken] = useState(localStorage.getItem('refreshToken'));
+
+  const login = (token) => {
     setAccessToken(token);
     localStorage.setItem('accessToken', token);
-};
+  };
 
-const logout = () => {
+  const logout = () => {
     setAccessToken(null);
     localStorage.removeItem('accessToken');
     setRefreshToken(null);
     localStorage.removeItem('refreshToken');
-    navigate('/')
-};
+    navigate('/');
+  };
 
-return (
-    <AuthContext.Provider value={{ accessToken, refreshToken, login, logout }}>
-        {children}
+  console.log(cart);
+
+  return (
+    <AuthContext.Provider value={{
+    //   user,
+    //   cart,
+    //   addToCart,
+    //   removeFromCart,
+    //   updateCart,
+      accessToken,
+      refreshToken,
+      login,
+      logout
+    }}>
+      {children}
     </AuthContext.Provider>
-);
-}
-
+  );
+};
 
 export default AuthContext;
