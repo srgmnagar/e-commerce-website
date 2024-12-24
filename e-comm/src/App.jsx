@@ -6,9 +6,9 @@ import Landing from './pages/Landing'
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Product from './pages/Product';
-import ShopContextProvider from './context/ShopContext';
-import { Authprovider } from './Components/Authprovider';
-import ProtectedRoute from './Components/ProtectedRoutes';
+import ShopContextProvider from './context/ShopContext.jsx';
+import { Authprovider } from './Components/Authprovider.jsx';
+import ProtectedRoute from './Components/ProtectedRoutes.jsx';
 
 
 function App() {
