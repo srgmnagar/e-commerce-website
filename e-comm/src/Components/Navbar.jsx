@@ -16,9 +16,9 @@ function Navbar() {
   const { accessToken } = useContext(AuthContext);
   const handleNavigation = () => {
     if (accessToken) {
-      navigate('/cart'); // Navigate to cart page if logged in
+      navigate('/cart'); 
     } else {
-      navigate('/login'); // Navigate to login page if not logged in
+      navigate('/login'); 
     }
   };
   const [visible, setVisible] = useState(false);

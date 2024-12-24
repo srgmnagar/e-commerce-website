@@ -37,7 +37,7 @@ function Landing() {
           <div className='flex gap-3' >
             <div className='relative '>
               <img className='w-20 hover:scale-105 transition-all duration-100 linear' src={Lp_1} alt="" />
-              <div className='sm:block hidden absolute px-1 py-0.5 bg-[#ffffffc8] rounded-3xl text-[7px] bottom-3 left-2 '>Quick Response</div>
+             
             </div>
             <div className='flex flex-col gap-3'>
               <div className='px-5 py-5 text-xs bg-[#cf180030] rounded-xl hover:scale-105 transition-all duration-100 linear'>Best Value</div>

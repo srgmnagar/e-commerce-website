@@ -44,12 +44,12 @@ function Collection() {
     if(search&&showSearch){
       filtered=filtered.filter(item=>item.title.toLowerCase().includes(search.toLowerCase()))
     }
-    // Apply Category Filter
+   
     if (category.length > 0) {
       filtered = filtered.filter((item) => category.includes(item.category));
     }
 
-    // Apply Sorting
+   
     switch (sortType) {
       case 'Price-Low to High':
         filtered.sort((a, b) => a.price - b.price);
@@ -58,7 +58,7 @@ function Collection() {
         filtered.sort((a, b) => b.price - a.price);
         break;
       default:
-        break; // No sorting applied
+        break; 
     }
 
     setFilterProduct(filtered);
@@ -69,7 +69,7 @@ useEffect(() => {
 }, [category, sortType,search,showSearch]);
 
 const sortproduct = () => {
-  let fpcopy = [...filterProduct]; // Create a shallow copy of the array
+  let fpcopy = [...filterProduct];
   switch (sortType) {
     case 'Price-Low to High':
       fpcopy = fpcopy.sort((a, b) => a.price - b.price);
@@ -78,10 +78,10 @@ const sortproduct = () => {
       fpcopy = fpcopy.sort((a, b) => b.price - a.price);
       break;
     default:
-      fpcopy = [...product]; // Reset to the original product list if no sort applied
+      fpcopy = [...product];
       break;
   }
-  setFilterProduct(fpcopy); // Update the state with the new sorted array
+  setFilterProduct(fpcopy); 
 };
 
 
@@ -114,7 +114,7 @@ return (
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
               <input className='w-3' type="checkbox" name="" id="" value={'home-decoration'} onChange={toggleCategory} />home-decoration
             </p>
-            <p className='flex gap-2 text-md text-[#ffe8b6]'>
+            {/* <p className='flex gap-2 text-md text-[#ffe8b6]'>
               <input className='w-3' type="checkbox" name="" id="" />Electronics
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
@@ -143,7 +143,7 @@ return (
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
               <input className='w-3' type="checkbox" name="" id="" />Smartphones
-            </p>
+            </p> */}
 
           </div>
         </div>
