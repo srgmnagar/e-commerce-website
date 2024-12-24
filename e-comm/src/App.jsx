@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Product from './pages/Product';
 import ShopContextProvider from './context/ShopContext';
-import { AuthProvider } from './Components/Authprovider';
+import { Authprovider } from './Components/Authprovider';
 import ProtectedRoute from './Components/ProtectedRoutes';
 
 
@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <AuthProvider>
+    <Authprovider>
 
 
       <ShopContextProvider>
@@ -35,7 +35,7 @@ function App() {
           <Route path='/product/:productId' element={<Product />} />
         </Routes>
       </ShopContextProvider>
-    </AuthProvider>
+    </Authprovider>
   )
 }
 
