@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cart from '../Images/cart.png';
-import AuthContext from '../Components/AuthProvider';
+import AuthContext from './Authprovider';
 
 const CartButton = ({ productId, productQuantity = 1 }) => {
     const { user, addToCart } = useContext(AuthContext);
