@@ -9,6 +9,8 @@ import Product from './pages/Product';
 import ShopContextProvider from './context/ShopContext.jsx';
 import { Authprovider } from './Components/Authprovider.jsx';
 import ProtectedRoute from './Components/ProtectedRoutes.jsx';
+import Checkout from './pages/Checkout.jsx';
+import { CartProvider } from './Components/CartProvider.jsx';
 
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
 
   return (
     <Authprovider>
-
+      <CartProvider>
 
       <ShopContextProvider>
 
@@ -32,9 +34,18 @@ function App() {
                     </ProtectedRoute>
                 }
             />
+            <Route
+                path="/checkout"
+                element={
+                    <ProtectedRoute>
+                        <Checkout/>
+                    </ProtectedRoute>
+                }
+            />
           <Route path='/product/:productId' element={<Product />} />
         </Routes>
       </ShopContextProvider>
+      </CartProvider>
     </Authprovider>
   )
 }

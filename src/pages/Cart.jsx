@@ -2,90 +2,67 @@
 import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../Components/Authprovider.jsx';
 import Navbar from '../Components/Navbar';
-import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+import { CartContext } from '../Components/CartProvider.jsx';
 
 function Cart() {
+  const { cartData, setCartData } = useContext(CartContext);
   const { logout } = useContext(AuthContext);
-  const [cartData, setCartData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const userId = localStorage.getItem('userId');
 
   useEffect(() => {
-    const fetchUserCart = async () => {
-      if (!userId) {
-        console.error('User ID not found. Please log in.');
-        return;
-      }
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartData(cart);
+  }, []);
 
-      try {
-        const response = await axios.get(`https://dummyjson.com/carts/${userId}`);
-        setCartData(response.data);
-      } catch (error) {
-        console.error('Error fetching cart:', error);
-      }
-    };
-    fetchUserCart();
-  }, [userId]);
+  const handleUpdateCart = (productId, quantity) => {
+    if (quantity < 1) return;
 
-  const handleUpdateCart = async (productId, quantity) => {
-    setLoading(true);
-    try {
-      const response = await axios.put(`https://dummyjson.com/carts/${userId}`, {
-        merge: true,
-        products: [{ id: productId, quantity }],
-      });
-      setCartData(response.data);
-    } catch (error) {
-      console.error('Error updating cart:', error);
-    } finally {
-      setLoading(false);
-    }
+    const updatedCart = cartData.map((product) =>
+      product.id === productId ? { ...product, quantity } : product
+    );
+
+    setCartData(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  const handleDeleteProduct = async (productId) => {
-    setLoading(true);
-    try {
-      const updatedProducts = cartData.products.filter((product) => product.id !== productId);
-      const response = await axios.put(`https://dummyjson.com/carts/${userId}`, {
-        merge: false, // Merge is false to remove the product
-        products: updatedProducts.map((product) => ({
-          id: product.id,
-          quantity: product.quantity,
-        })),
-      });
-      setCartData(response.data);
-    } catch (error) {
-      console.error('Error deleting product:', error);
-    } finally {
-      setLoading(false);
-    }
+  const handleDeleteProduct = (productId) => {
+    const updatedCart = cartData.filter((product) => product.id !== productId);
+
+    setCartData(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  if (!cartData) {
-    return <div>Loading...</div>;
+  const total = cartData.reduce((sum, product) => sum + product.price * product.quantity, 0);
+  const totalQuantity = cartData.reduce((sum, product) => sum + product.quantity, 0);
+
+  if (cartData.length === 0) {
+    return (
+      <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen pb-5">
+        <Navbar />
+        <div className="text-center text-xl mt-10">Your cart is empty!</div>
+      </div>
+    );
   }
 
-  const { products, total, discountedTotal } = cartData;
-
   return (
-    <div className='bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5'>
+    <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-3">
       <Navbar />
-      <div className="flex justify-between py-10 sm:max-w-[80vw] max-w-[90vw] m-auto">
-        <div className='text-2xl text-red-800 font-medium'>YOUR CART</div>
+      <div className="flex justify-between py-6 sm:max-w-[80vw] max-w-[90vw] m-auto">
+        <div className="text-2xl text-red-800 font-medium">YOUR CART</div>
         <button onClick={() => logout()} className='px-5 py-2 bg-[#cf1800] rounded-3xl text-red-100  hover:scale-105 transition-all duration-100 linear text-md'>Logout</button>
       </div>
 
-      <div className='sm:max-w-[80vw] max-w-[90vw] m-auto flex flex-col gap-5'>
+      <div className="sm:max-w-[80vw] max-w-[90vw] m-auto flex flex-col gap-10">
         {/* Cart Items */}
-        <div className="flex flex-col gap-5">
-          {products.map((product) => (
+        <div className="flex flex-col gap-3">
+          {cartData.map((product) => (
             <div key={product.id} className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
               <img src={product.thumbnail} alt={product.title} className="w-20 h-20 object-cover rounded" />
               <div className="flex-1 px-4">
                 <h3 className="text-xl font-semibold">{product.title}</h3>
                 <p className="text-gray-500">Price: ${product.price}</p>
-                <p className="text-gray-500">Quantity: 
+                <p className="text-gray-500">
+                  Quantity:
                   <input
                     type="number"
                     value={product.quantity}
@@ -94,11 +71,9 @@ function Cart() {
                     onChange={(e) => handleUpdateCart(product.id, parseInt(e.target.value))}
                   />
                 </p>
-                <p className="font-medium text-lg">SubTotal: ${product.total}</p>
-                <p className="text-gray-500">Discount: {product.discountPercentage}%</p>
+                <p className="font-medium text-lg">SubTotal: ${(product.price * product.quantity).toFixed(2)}</p>
               </div>
               <div className="text-right">
-                <p className="text-lg text-black font-bold">Discounted total: ${product.discountedPrice || product.discountedTotal}</p>
                 <button
                   onClick={() => handleDeleteProduct(product.id)}
                   className="mt-2 text-red-500 hover:underline"
@@ -111,27 +86,27 @@ function Cart() {
         </div>
 
         {/* Cart Summary */}
-        <div className="mt-8 p-4 bg-white rounded-lg shadow-md">
+        <div className=" p-4 bg-white rounded-lg shadow-md">
           <div className="flex justify-between mb-4">
             <span className="font-semibold text-xl">Total Products</span>
-            <span className="text-xl">{cartData.totalProducts}</span>
+            <span className="text-xl">{cartData.length}</span>
           </div>
           <div className="flex justify-between mb-4">
             <span className="font-semibold text-xl">Total Quantity</span>
-            <span className="text-xl">{cartData.totalQuantity}</span>
+            <span className="text-xl">{totalQuantity}</span>
           </div>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-3">
             <span className="font-semibold text-xl">Total Price</span>
-            <span className="text-xl">${total.toFixed(2)}</span>
+            <span className="text-xl font-semibold">${total.toFixed(2)}</span>
           </div>
-          <div className="flex justify-between">
-            <span className="font-semibold text-xl text-red-600">Discounted Total</span>
-            <span className="text-xl font-semibold text-red-600">${discountedTotal.toFixed(2)}</span>
-          </div>
+        <div className=' flex justify-start'>
+        <NavLink to={'/checkout'} className='px-5 py-2 bg-[#cf1800] rounded-3xl text-red-100  hover:scale-105 transition-all duration-100 linear text-md'>
+            Proceed to Checkout 
+        </NavLink>
+
+        </div>
         </div>
       </div>
-
-      {loading && <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">Loading...</div>}
     </div>
   );
 }
