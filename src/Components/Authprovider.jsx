@@ -95,11 +95,6 @@ export const Authprovider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{
-    //   user,
-    //   cart,
-    //   addToCart,
-    //   removeFromCart,
-    //   updateCart,
       accessToken,
       refreshToken,
       login,

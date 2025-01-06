@@ -5,10 +5,10 @@ import AuthContext from './Authprovider';
 import { useNavigate } from 'react-router-dom';
 
 const CartButton = ({ product }) => {
-  const { user} = useContext(AuthContext);
+  const { accessToken} = useContext(AuthContext);
   const navigate = useNavigate();
   const handleAddToCart = () => {
-    if (!user) {
+    if (!accessToken) {
       alert('Please log in to add items to the cart.');
       navigate('/login');
       return;
