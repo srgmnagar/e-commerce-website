@@ -17,7 +17,7 @@ function Collection() {
   const { search, showSearch } = useContext(ShopContext)
 
   useEffect(() => {
-    axios.get('https://dummyjson.com/products?limit=50')
+    axios.get('https://dummyjson.com/products?limit=100')
       .then((response) => {
 
         setProducts(response.data.products)
@@ -114,36 +114,28 @@ function Collection() {
               <p className='flex gap-2 text-md text-[#ffe8b6]'>
                 <input className='w-3' type="checkbox" name="" id="" value={'home-decoration'} onChange={toggleCategory} />home-decoration
               </p>
-              {/* <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Electronics
+            <p className='flex gap-2 text-md text-[#ffe8b6]'>
+              <input className='w-3' type="checkbox" name="" id="" value={"kitchen-accessories"} onChange={toggleCategory}/>kitchen-accessories
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />kitchen-accessories
+              <input className='w-3' type="checkbox" name="" id="" value={"laptops"} onChange={toggleCategory}/>Laptops
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Laptops
+              <input className='w-3' type="checkbox" name="" id="" value={"mens-shoes"} onChange={toggleCategory}/>Men's Shoes
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Men's Shoes
+              <input className='w-3' type="checkbox" name="" id="" value={"mens-shirts"} onChange={toggleCategory} />Men's Shirts
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Men's Shirts
+              <input className='w-3' type="checkbox" name="" id=""  value={"mens-watches"} onChange={toggleCategory}/>Men's watches
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Men's watches
+              <input className='w-3' type="checkbox" name="" id=""  value={"mens-shoes"} onChange={toggleCategory}/>Men's shoes
             </p>
             <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Mobile-accessories
+              <input className='w-3' type="checkbox" name="" id="" value={"mobile-accessories"} onChange={toggleCategory}/>Mobile-accessories
             </p>
-            <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Motorcycles
-            </p>
-            <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Skin-care
-            </p>
-            <p className='flex gap-2 text-md text-[#ffe8b6]'>
-              <input className='w-3' type="checkbox" name="" id="" />Smartphones
-            </p> */}
+         
 
             </div>
           </div>
@@ -163,28 +155,28 @@ function Collection() {
 
           <div>
 
-            <main className="md:max-w-[80vw] max-w-[90vw] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8 m-auto">
-              {filterProduct.map((product) => (
-                <NavLink
-                  to={`/product/${product.id}`}
-                  key={product.id}
-                  className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden"
-                >
-                  <img
-                    className="w-52 hover:scale-[1.17] transition-all delay-50 duration-200 linear"
-                    src={product.thumbnail}
-                    alt={product.title}
-                  />
-                  <h2 className="text-red-100 text-xl font-bold text-center">
-                    {product.title}
-                  </h2>
-                  <div className="flex gap-2 justify-center items-center">
-                    <p className="text-md font-bold">${product.price}</p>
-                    <p className="text-xs text-gray-300">({product.discountPercentage}% off)</p>
-                  </div>
-                  <CartButton product={product} />
-                </NavLink>
-              ))}
+          <main className="md:max-w-[80vw] max-w-[90vw] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8 m-auto">
+                {filterProduct.map((product) => (
+                    <div
+                        key={product.id}
+                        className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden"
+                    >
+                        <NavLink to={`/product/${product.id}`}>
+                            <img
+                                className="w-52 hover:scale-[1.17] transition-all delay-50 duration-200 linear"
+                                src={product.thumbnail}
+                                alt={product.title}
+                            /></NavLink>
+                        <NavLink to={`/product/${product.id}`} className="text-red-100 hover:underline hover:scale-105 text-xl font-bold text-center">
+                            {product.title}
+                        </NavLink>
+                        <div className="flex gap-2 justify-center items-center">
+                            <p className="text-md font-bold">${product.price}</p>
+                            <p className="text-xs text-gray-300">({product.discountPercentage}% off)</p>
+                        </div>
+                        <CartButton product={product} />
+                    </div>
+                ))}
             </main>
 
 
