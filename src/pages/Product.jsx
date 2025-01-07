@@ -92,7 +92,7 @@ const Product = () => {
               ))}
             </div>
           </div>
-          {/* Add to Cart Button */}
+          
           <CartButton />
         </div>
       </main>

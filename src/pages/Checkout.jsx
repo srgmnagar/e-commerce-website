@@ -27,7 +27,7 @@ function Checkout() {
     e.preventDefault();
     console.log('Shipping Details:', shippingDetails);
     alert('Order placed successfully!');
-    // Handle further submission logic here
+    
   };
 
   return (

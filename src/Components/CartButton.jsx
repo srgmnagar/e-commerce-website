@@ -18,10 +18,10 @@ const CartButton = ({ product }) => {
     const productIndex = cart.findIndex((item) => item.id === product.id);
 
     if (productIndex > -1) {
-      // If product exists, update the quantity
+      
       cart[productIndex].quantity += 1;
     } else {
-      // Add new product with quantity 1
+      
       cart.push({ ...product, quantity: 1 });
     }
 
