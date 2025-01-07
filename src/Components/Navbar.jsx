@@ -47,7 +47,7 @@ function Navbar() {
           >
             Collections
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/about"
             className={({ isActive }) =>
               `hover:scale-105 hover:font-bold transition-all duration-100 ease-in ${isActive ? "underline font-extrabold " : ""
@@ -55,7 +55,7 @@ function Navbar() {
             }
           >
             About
-          </NavLink>
+          </NavLink> */}
         </div>
 
         <div className="flex sm:gap-5 gap-0">
