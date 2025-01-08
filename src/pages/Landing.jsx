@@ -50,19 +50,19 @@ function Landing() {
 
               </div>
               <div className='flex flex-col gap-3'>
-                <div className='px-5 py-5 text-xs bg-[#cf180030] rounded-xl hover:scale-105 transition-all duration-100 linear'>Best Value</div>
-                <div className='px-5 py-5 text-xs bg-[#cf180030] rounded-xl hover:scale-105 transition-all duration-100 linear'>Cash Back</div>
+                <div className='lg:p-5  md:p-3 p-5  text-xs bg-[#cf180030] rounded-xl hover:scale-105 transition-all duration-100 linear'>Best Value</div>
+                <div className='lg:p-5  md:p-3 p-5 text-xs bg-[#cf180030] rounded-xl hover:scale-105 transition-all duration-100 linear'>Cash Back</div>
               </div>
             </div>
           </div>
         </section>
-        <section className="md:m-0 my-5 bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] md:w-[60%] w-[80%] mx-auto md:absolute lg:right-32 lg:bottom-24 md:right-7 md:bottom-2 bottom-0 flex flex-col justify-center">
+        <section className="md:m-0 my-5 bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] md:w-[60%] w-[80%] mx-auto md:absolute lg:right-32 lg:bottom-3 xl:bottom-24 md:right-7 md:bottom-2 bottom-0 flex flex-col justify-center">
 
 
         <div className="text-white font-extrabold text-3xl text-center">
             Explore Popular Categories
           </div>
-          <div className="flex flex-wrap md:flex-nowrap gap-10 justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 md:gap-10 gap-5 justify-center">
             {[
               { img: elec, label: 'Laptops' },
               { img: perfume, label: 'Fragrances' },

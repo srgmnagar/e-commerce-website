@@ -33,12 +33,12 @@ function Checkout() {
   return (
     <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5">
       <Navbar />
-      <div className="sm:px-32 px-20 mx-auto  mt-8 ">
-        <div className='w-full flex sm:flex-row flex-col gap-10'>
+      <div className="sm:px-32 px-16 mx-auto  mt-8 ">
+        <div className='w-full flex lg:flex-row flex-col gap-10'>
 
 
           {/* Cart Summary */}
-          <div className="p-4 bg-white rounded-lg shadow-md sm:w-1/3">
+          <div className="p-4 bg-white rounded-lg shadow-md lg:w-1/3 w-full">
             <div className="flex justify-between gap-10 mb-4">
               <span className="font-semibold text-xl">Total Products</span>
               <span className="text-xl">{cartData.length}</span>

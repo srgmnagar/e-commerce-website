@@ -146,7 +146,7 @@ function Collection() {
             <p className='sm:text-2xl text-lg text-orange-950 font-medium'>ALL COLLECTIONS</p>
 
             {/* sort */}
-            <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-amber-950 text-sm sm:font-medium font-normal sm:px-2 px-1 bg-transparent text-amber-950' >
+            <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-amber-950 text-sm sm:font-medium font-normal sm:px-2 p-0.5 bg-transparent text-amber-950' >
               <option value="relevant">Sort by: Relevant</option>
               <option value="Price-Low to High">Sort by: Price-Low to High</option>
               <option value="Price-High to Low">Sort by: Price-High to Low</option>
