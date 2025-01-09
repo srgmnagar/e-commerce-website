@@ -96,7 +96,7 @@ function Collection() {
 
       <div className='flex flex-col sm:flex-row gap-2 sm:gap-10 sm:px-20 px-10 py-7'>
         {/* {filterss} */}
-        <div className='flex flex-col gap-3 lg:min-w-72 sm:min-w-64 px-5 py-3 cursor-pointer text-center font-medium bg-[#70001cc5] rounded-3xl text-amber-50'>
+        <div className='app flex flex-col gap-3 lg:min-w-72 sm:min-w-64 px-5 py-3 cursor-pointer text-center font-medium bg-[#70001cc5] rounded-3xl text-amber-50'>
           <p onClick={() => setShowfilter(!showfilter)} className='text-xl'>FILTERS</p>
           {/* category filters */}
           <div className={`transition-all border border-[#fef3c78b] rounded-xl p-5 px-7 ${showfilter ? '' : 'hidden'} sm:block`}>
@@ -159,7 +159,7 @@ function Collection() {
                 {filterProduct.map((product) => (
                     <div
                         key={product.id}
-                        className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden"
+                        className="blok card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden"
                     >
                         <NavLink to={`/product/${product.id}`}>
                             <img

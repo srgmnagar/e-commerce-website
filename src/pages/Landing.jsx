@@ -24,15 +24,15 @@ function Landing() {
     <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5">
       <Navbar />
       <div className='relative'>
-        <section className="flex flex-col md:flex-row sm:justify-start justify-center items-center md:items-start lg:gap-10 md:gap-10 gap-2 text-orange-950 ">
+        <section className="flex flex-col md:flex-row lg:justify-start justify-center items-center md:items-start lg:gap-10 md:gap-10 gap-2 text-orange-950 ">
 
           <img
-            className="main-img relative"
+            className="start main-img relative"
             src={Main}
             alt=""
           />
 
-          <div className="md:p-0 p-2 flex flex-col gap-1  sm:gap-3 font-sans mt-6  px-5 md:items-start items-center">
+          <div className="start md:p-0 p-2 flex flex-col gap-1  sm:gap-3 font-sans mt-6 sm:w-1/3 lg:w-auto  lg:px-5 md:items-start items-center">
             <h1 className=" lg:text-7xl md:text-5xl font-extrabold">Let's Shop,</h1>
             <h1 className="lg:text-7xl md:text-5xl font-extrabold">All-In-One</h1>
             <h3 className="md:text-xl font-medium text-lg sm:text-start text-center">Lorem ipsum dolor sit amet consectetur, adipisicing</h3>
@@ -40,11 +40,11 @@ function Landing() {
 
           <div className='flex flex-col gap-3 mt-6 items-center '>
             <div className='px-7 py-3 bg-[#cf1800] rounded-3xl text-red-100 text-sm hover:scale-105 transition-all duration-100 linear'>BEST SERVICE</div>
-            <div className='md:text-md text-sm font-medium text-center'>
+            <div className=' md:text-md text-sm font-medium text-center'>
               <div >Why Our Products</div>
-              <div>Make You Happy?</div>
+              <div >Make You Happy?</div>
             </div>
-            <div className='flex gap-3' >
+            <div className='blok flex gap-3' >
               <div className='relative '>
                 <img className='w-20 hover:scale-105 transition-all duration-100 linear' src={Lp_1} alt="" />
 
@@ -56,10 +56,10 @@ function Landing() {
             </div>
           </div>
         </section>
-        <section className="md:m-0 my-5 bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] md:w-[60%] w-[80%] mx-auto md:absolute lg:right-32 lg:bottom-3 xl:bottom-24 md:right-7 md:bottom-2 bottom-0 flex flex-col justify-center">
+        <section className="start2 md:m-0 my-5 bg-[#19020150] backdrop-blur-sm px-6 py-4 gap-4 rounded-[40px] md:w-[60%] w-[80%] mx-auto md:absolute lg:right-32 lg:bottom-3 xl:bottom-24 md:right-7 md:bottom-2 bottom-0 flex flex-col justify-center">
 
 
-        <div className="text-white font-extrabold text-3xl text-center">
+        <div className=" text-white font-extrabold text-3xl text-center">
             Explore Popular Categories
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 md:gap-10 gap-5 justify-center">
@@ -79,10 +79,10 @@ function Landing() {
                   src={img}
                   alt={label}
                 />
-                <button className="btn-shadow px-2 py-1.5 font-bold text-[10px] bg-rose-300 rounded-full absolute bottom-10  shadow-sm">
+                <button className="btn-shadow px-2 py-1.5 font-bold lg:text-[10px] text-[8px] bg-rose-300 rounded-full absolute lg:bottom-14 xl:bottom-10 md:bottom-20 bottom-11  shadow-sm">
                   View All
                 </button>
-                <div className="text-red-800 italic font-extrabold font-serif text-lg">
+                <div className="text-red-800 italic font-extrabold font-serif text-lg text-center">
                   {label}
                 </div>
               </div>

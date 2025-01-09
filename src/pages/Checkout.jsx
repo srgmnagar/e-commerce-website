@@ -34,11 +34,11 @@ function Checkout() {
     <div className="bg-gradient-to-b from-[#ffc7a7] to-[#ffdfb8] min-h-screen relative pb-5">
       <Navbar />
       <div className="sm:px-32 px-16 mx-auto  mt-8 ">
-        <div className='w-full flex lg:flex-row flex-col gap-10'>
+        <div className='start w-full flex lg:flex-row flex-col gap-10'>
 
 
           {/* Cart Summary */}
-          <div className="p-4 bg-white rounded-lg shadow-md lg:w-1/3 w-full">
+          <div className=" p-4 bg-white rounded-lg shadow-md lg:w-1/3 w-full">
             <div className="flex justify-between gap-10 mb-4">
               <span className="font-semibold text-xl">Total Products</span>
               <span className="text-xl">{cartData.length}</span>
@@ -53,7 +53,7 @@ function Checkout() {
             </div>
           </div>
           {/* Shipping Address Form */}
-          <form onSubmit={handleSubmit} className="p-6 w-full bg-white rounded-lg shadow-md">
+          <form onSubmit={handleSubmit} className=" p-6 w-full bg-white rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4">Shipping Address</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>

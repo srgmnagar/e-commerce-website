@@ -56,7 +56,7 @@ function Cart() {
         {/* Cart Items */}
         <div className="flex flex-col gap-3">
           {cartData.map((product) => (
-            <div key={product.id} className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+            <div key={product.id} className="start flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
               <img src={product.thumbnail} alt={product.title} className="w-20 h-20 object-cover rounded" />
               <div className="flex-1 px-4">
                 <h3 className="text-xl font-semibold">{product.title}</h3>
@@ -86,7 +86,7 @@ function Cart() {
         </div>
 
         {/* Cart Summary */}
-        <div className=" p-4 bg-white rounded-lg shadow-md">
+        <div className="  start2 p-4 bg-white rounded-lg shadow-md">
           <div className="flex justify-between mb-4">
             <span className="font-semibold text-xl">Total Products</span>
             <span className="text-xl">{cartData.length}</span>

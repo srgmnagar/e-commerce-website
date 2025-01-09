@@ -42,7 +42,7 @@ function Productcards({selectedcat}) {
                 {filterProduct.map((product) => (
                     <div
                         key={product.id}
-                        className="card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden"
+                        className="blok card py-12 px-8 flex flex-col gap-2 justify-between items-center bg-[#70001cca] text-amber-100 overflow-hidden"
                     >
                         <NavLink to={`/product/${product.id}`}>
                             <img
