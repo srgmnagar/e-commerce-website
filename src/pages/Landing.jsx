@@ -71,7 +71,7 @@ function Landing() {
             ].map(({ img, label }) => (
               <div
                 key={label}
-                className="flex flex-col items-center justify-between relative gap-6 hover:scale-105 transition-all duration-200 linear"
+                className="flex flex-col items-center justify-between relative gap-6 hover:scale-105 transition-all duration-200 linear cursor-pointer"
                 onClick={() => handleSelectCat(label)}
               >
                 <img

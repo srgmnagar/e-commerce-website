@@ -50,19 +50,19 @@ h1{
 
 @keyframes appear {
     from {
-        opacity: 0.7;
-        transform: translateX(-100px);
+        opacity: 0.3;
+        transform:translate(-50px);
     }
     to {
         opacity: 1;
-        transform: translateX(0px);
+        transform:translate(0px);
     }
 }
 
 .blok {
     animation: appear 0.1s ease-out; 
     animation-timeline: view();
-    animation-range: entry 5% ; 
+    animation-range: entry 0% ; 
 }
 
 @keyframes start {
@@ -80,8 +80,8 @@ h1{
     
     animation: start 0.3s ease-in-out ; 
 animation-delay: 0.1s;
-animation-fill-mode: forwards; /* Ensure the final state stays applied */
-    opacity: 0; /* Initial state to keep the element invisible before animation starts */
+animation-fill-mode: forwards; 
+    opacity: 0; 
 }
 .start2 {
     

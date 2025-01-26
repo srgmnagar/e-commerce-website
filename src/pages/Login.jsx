@@ -42,6 +42,10 @@ const Login = () => {
 
   return (
     <div className='bg-[#ff8b64] h-screen flex justify-center items-center'>
+      <div className='bg-[#ffa88b] text-white absolute flex flex-col justify-between p-4 rounded-xl right-5 top-5'>
+        <div>Username: emilys</div>
+        <div>Password: emilyspass</div>
+      </div>
       <form
         className='bg-[#ffec97] px-11 py-6 rounded-xl w-4/5 md:w-1/2 lg:w-1/3 mx-auto flex flex-col gap-9'
         onSubmit={handleSubmit}
